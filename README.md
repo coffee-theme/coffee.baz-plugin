@@ -27,4 +27,4 @@ $ baz install git 'https://github.com/coffee-theme/coffee.baz-plugin'
 - `COFFEE_USER_CHAR` -- The character to use for the normal user as the prompt [`%`]
 - `COFFEE_CLR_ERR` -- The error colour [`red`]
 - `COFFEE_CLR_VENV` -- The colour to use for virtual environments [`green`]
-- `COFFEE_CLR_ROOT` -- The user colour for the `root` user
+- `COFFEE_CLR_ROOT` -- The user colour for the `root` user [`red`]
