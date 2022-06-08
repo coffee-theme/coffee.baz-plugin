@@ -28,3 +28,14 @@ $ baz install git 'https://github.com/coffee-theme/coffee.baz-plugin'
 - `COFFEE_CLR_ERR` -- The error colour [`red`]
 - `COFFEE_CLR_VENV` -- The colour to use for virtual environments [`green`]
 - `COFFEE_CLR_ROOT` -- The user colour for the `root` user [`red`]
+
+# Colours
+
+The colours are not automatically escaped, to escape them
+you can use `printf` or smt:
+
+E.g.
+
+```bash
+export COFFEE_CLR_USER="$(printf "\033[0;33m")"
+```
