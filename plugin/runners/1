@@ -11,12 +11,13 @@ baz_coffee_prompt() {
         venv="${VIRTUAL_ENV##*/}" \
         dir='\W' \
         prompt_char="${COFFEE_ROOT_CHAR:-#}" \
-        user_colour="${COFFEE_CLR_USER:-${COFFEE_PROMPT_GREEN}}"
+        user_colour="${COFFEE_CLR_USER:-${COFFEE_PROMPT_GREEN}}" \
+        extra
 
     git="$(git rev-parse --abbrev-ref HEAD 2>/dev/null || true)"
 
     [ $UID != '0' ] && prompt_char="${COFFEE_USER_CHAR:-%}"
-    [ $c_status != '0' ] && propt_colour="${COFFEE_CLR_ERR:-${COFFEE_PROMPT_RED}}$c_status "
+    [ $c_status != '0' ] && local propt_colour="${COFFEE_CLR_ERR:-${COFFEE_PROMPT_RED}}$c_status "
     [ "$git" ] && dir="($git) $dir"
     [ "$venv" ] && extra="{${COFFEE_CLR_VENV:-${COFFEE_PROMPT_GREEN}}$venv${COFFEE_PROMPT_RESTORE}} "
     [ $UID == '0' ] && user_colour="${COFFEE_CLR_ROOT:-${COFFEE_PROMPT_RED}}"
